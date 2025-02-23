@@ -1,0 +1,322 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    
+}
+
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: #333;
+    color: white;
+}
+
+.logoImage {
+    width: 150px; 
+    height: auto;
+    display: block;
+}
+
+/* Navigation Bar */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+nav ul li a.active {
+    font-weight: bold;
+    border-bottom: 2px solid #42adfa;
+    /* TODO: Change color? */
+}
+
+nav ul li a:hover {
+    color: #4dc2dc;
+}
+
+/* Contact Button */
+.contact-button {
+    padding: 10px 20px;
+    background-color: #4dc2dc;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.contact-button:hover {
+    background-color: #37aac8;
+    transform: scale(1.05);
+}
+.contact-button button:active {
+    background-color: #2f9ab5; /* Darker when clicked */
+    transform: scale(0.98);
+}
+
+
+section {
+    padding: 50px;
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+
+/* Uniform Text Styling TODO: TO BE DETERMINED */
+.indexQuote, .dashText {
+    font-size: 2vw;
+    text-align: center;
+    font-weight: bold;
+    max-width: 90%;
+}
+
+.indexQuoteAuthor, .dashSubText {
+    font-size: 1.5vw;
+    text-align: center;
+}
+
+/* Home Quote and Image Styling */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 10px;
+    min-height: 100vh;
+}
+.column {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.indexQuote {
+    font-size: 3vw;
+    max-width: 90%;
+    text-align: center;
+}
+.indexQuoteAuthor {
+    font-size: 1.5vw;
+    text-align: center;
+}
+.indexImage {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 50vh;
+    object-fit: contain;
+}
+
+/* Media query for small screens */
+@media (max-width: 768px) {
+    @media (max-width: 768px) {
+        .row {
+            flex-direction: column; /* Stacks items on smaller screens */
+        }
+    
+        .column {
+            height: auto; /* Allows content to adjust dynamically */
+        }
+    
+        .indexQuote {
+            font-size: 5vw;
+        }
+    
+        .indexQuoteAuthor {
+            font-size: 3vw;
+        }
+    
+        .indexImage {
+            max-width: 80%;
+            max-height: 40vh;
+        }
+    }
+}
+
+/* About Section */
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    padding: 50px;
+}
+.about-container {
+    max-width: 800px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Profile Image */
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+/* Bio Styling */
+.bio {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    background: #4dc2dc;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: #33e5dc;
+}
+
+/* Footer styling */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.footer-links a:hover {
+    color: #4dc2dc;
+}
+
+/* Gallery Styling */
+.gallery {
+    display: inline-block;
+    border: 1px solid grey;
+    margin: 5px;
+    width: 200px;
+    text-align: center;
+}
+.gallery img {
+    width: 100%;
+    height: auto;
+}
+.gallery .description {
+    padding: 5px;
+    text-align: center;
+}
+
+
+/* Owner button styling */
+.owner-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.owner-buttons button {
+    background-color: #333; 
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px; /* Rounded corners */
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+.owner-buttons button:hover {
+    background-color: #555; 
+    transform: scale(1.05); 
+}
+.owner-buttons button:active {
+    background-color: #222; /* Darker when clicked */
+    transform: scale(0.98);
+}
+
+/* Upload container */
+.upload-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 40vh; /* Adjust height as needed */
+    width: 100%;
+}
+.upload-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+.upload-container input {
+    padding: 10px;
+    font-size: 16px;
+    width: 250px; /* Adjust as needed */
+}
+.upload-container button {
+    margin-top: 10px;
+}

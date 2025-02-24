@@ -19,7 +19,9 @@ if (!isset($_SESSION['owner_logged_in']) || $_SESSION['owner_logged_in'] !== tru
 <body>
 
     <header>
-        <img src="components/WhiteCameraLogo.png" alt="Carlos Photography Logo" class="logoImage">
+        <a href="index.php">
+            <img src="components/WhiteCameraLogo.png" alt="Carlos Photography Logo" class="logoImage">
+        </a>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>

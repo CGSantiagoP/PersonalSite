@@ -10,8 +10,9 @@
 
     <header>
         <!-- Get logo and add here -->
-        <img src="components/WhiteCameraLogo.png" alt="Carlos Photography Logo" class="logoImage">
-
+        <a href="index.php">
+            <img src="components/WhiteCameraLogo.png" alt="Carlos Photography Logo" class="logoImage">
+        </a>
         <!-- Add nav here -->
         <nav>
             <ul>
@@ -21,28 +22,31 @@
                 <!-- <li><a href="#">Contact</a></li> -->
             </ul>
         </nav>
-
-        <!-- Add button to ... contact? -->
         <a href="contact.html">
             <button class="contact-button" >Contact</button>
         </a>
     </header>
 
-    <main>
-        <h2>Welcome to the Contact Page</h2>
+    <main class="contact-container">
+        <h2 class="contact-heading">Contact Me</h2>
+        <form id="contactForm"
+            action="https://formspree.io/f/xvgznnnb"
+            method="POST"
+            enctype="multipart/form-data"
+            class="contact-form">
+            
+            <label for="email" class="contact-label">Your Email:</label>
+            <input type="email" id="email" name="email" required autocomplete="email" aria-label="Your email" class="contact-input">
+            
+            <label for="message" class="contact-label">Your Message:</label>
+            <textarea id="message" name="message" required aria-label="Your message" class="contact-textarea"></textarea>
+    
+            <!-- Hidden honeypot field for spam protection -->
+            <input type="text" name="_gotcha" style="display: none;">
+    
+            <button type="submit" class="contact-button">Send</button>
+        </form>
     </main>
-
-
-<!-- 
-    <script>
-        fetch("header.html")
-        .then(response => response.text())
-        .then(data => {
-            document.body.insertAdjacentHTML("afterbegin", data);
-        });
-    </script>
-     -->
-
 
      <!-- Footer Section -->
     <footer>

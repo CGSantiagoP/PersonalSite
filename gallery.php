@@ -23,7 +23,9 @@ $result = $conn->query($sql);
 <body>
 
     <header>
-        <img src="components/WhiteCameraLogo.png" alt="Carlos Photography Logo" class="logoImage">
+        <a href="index.php">
+            <img src="components/WhiteCameraLogo.png" alt="Carlos Photography Logo" class="logoImage">
+        </a>
         <nav>
             <ul>
                 <li><a href="index.php">Home</a></li>

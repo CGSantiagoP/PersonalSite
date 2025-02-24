@@ -63,8 +63,10 @@ if (isset($_POST['edit'])) {
 </head>
 <body>
 
-<header>
-        <img src="components/WhiteCameraLogo.png" alt="Carlos Photography Logo" class="logoImage">
+    <header>
+        <a href="index.php">
+            <img src="components/WhiteCameraLogo.png" alt="Carlos Photography Logo" class="logoImage">
+        </a>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -77,53 +79,53 @@ if (isset($_POST['edit'])) {
         </a>
     </header>
 
-<main>
-    <h2 class="dashText">Manage Images</h2>
+    <main>
+        <h2 class="dashText">Manage Images</h2>
 
-    <div class="gallery-container">
-        <?php
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                echo '<div class="gallery">';
-                echo '<img src="' . $row["file_path"] . '" alt="Gallery Image" width="200px">';
-                echo '<p>' . htmlspecialchars($row["description"]) . '</p>';
+        <div class="gallery-container">
+            <?php
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo '<div class="gallery">';
+                    echo '<img src="' . $row["file_path"] . '" alt="Gallery Image" width="200px">';
+                    echo '<p>' . htmlspecialchars($row["description"]) . '</p>';
 
-                // Edit form
-                echo '<form method="POST" action="manageImages.php">';
-                echo '<input type="hidden" name="image_id" value="' . $row["id"] . '">';
-                echo '<input type="text" name="new_description" placeholder="New description" required>';
-                echo '<button type="submit" name="edit">Edit</button>';
-                echo '</form>';
+                    // Edit form
+                    echo '<form method="POST" action="manageImages.php">';
+                    echo '<input type="hidden" name="image_id" value="' . $row["id"] . '">';
+                    echo '<input type="text" name="new_description" placeholder="New description" required>';
+                    echo '<button type="submit" name="edit">Edit</button>';
+                    echo '</form>';
 
-                // Delete form
-                echo '<form method="POST" action="manageImages.php" onsubmit="return confirm(\'Are you sure you want to delete this image?\');">';
-                echo '<input type="hidden" name="image_id" value="' . $row["id"] . '">';
-                echo '<button type="submit" name="delete">Delete</button>';
-                echo '</form>';
+                    // Delete form
+                    echo '<form method="POST" action="manageImages.php" onsubmit="return confirm(\'Are you sure you want to delete this image?\');">';
+                    echo '<input type="hidden" name="image_id" value="' . $row["id"] . '">';
+                    echo '<button type="submit" name="delete">Delete</button>';
+                    echo '</form>';
 
-                echo '</div>';
+                    echo '</div>';
+                }
+            } else {
+                echo "<p>No images uploaded yet.</p>";
             }
-        } else {
-            echo "<p>No images uploaded yet.</p>";
-        }
-        ?>
-    </div>
-</main>
+            ?>
+        </div>
+    </main>
 
-<footer>
-    <div class="footer-container">
-        <p>&copy; 2025 Carlos's Gallery. All rights reserved.</p>
-        <ul class="footer-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Me</a></li>
-            <li><a href="gallery.php">Gallery</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <?php if (!isset($_SESSION['owner_logged_in']) || $_SESSION['owner_logged_in'] == true):?>
-                <a href="login.php">Log In</a>
-            <?php endif; ?>
-        </ul>
-    </div>
-</footer>
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2025 Carlos's Gallery. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="gallery.php">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <?php if (!isset($_SESSION['owner_logged_in']) || $_SESSION['owner_logged_in'] == true):?>
+                    <a href="login.php">Log In</a>
+                <?php endif; ?>
+            </ul>
+        </div>
+    </footer>
 
 </body>
 </html>

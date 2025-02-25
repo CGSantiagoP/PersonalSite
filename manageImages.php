@@ -6,7 +6,8 @@ if (!isset($_SESSION['owner_logged_in']) || $_SESSION['owner_logged_in'] !== tru
 }
 
 // Connect to database
-$conn = new mysqli("localhost", "root", "fyddiv-rEvkow-bazso6", "gallery_db");
+// $conn = new mysqli("localhost", "root", "fyddiv-rEvkow-bazso6", "gallery_db");
+$conn = new mysqli("sql213.infinityfree.com", "if0_38389790", "6AJvtAGwU7Qn", "if0_38389790_gallery_db");
 
 // Check connection
 if ($conn->connect_error) {

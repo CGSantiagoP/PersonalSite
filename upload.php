@@ -5,8 +5,11 @@ if (!isset($_SESSION['owner_logged_in']) || $_SESSION['owner_logged_in'] !== tru
     exit();
 }
 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+
 // Connect to database
-// $conn = new mysqli("localhost", "root", "fyddiv-rEvkow-bazso6", "gallery_db");
 $conn = new mysqli("sql213.infinityfree.com", "if0_38389790", "6AJvtAGwU7Qn", "if0_38389790_gallery_db");
 
 // Check connection
@@ -21,6 +24,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $description = htmlspecialchars($_POST["description"]);
     $upload_ok = 1;
     $image_file_type = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+
+
+    // Check for file upload errors
+    if ($_FILES["image"]["error"] !== UPLOAD_ERR_OK) {
+        echo "Error uploading file: " . $_FILES["image"]["error"];
+        exit();
+    }
+
+
 
     $check = getimagesize($_FILES["image"]["tmp_name"]);
     if ($check === false) {
@@ -46,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($stmt->execute()) {
                 echo "Image uploaded successfully!";
             } else {
-                echo "Error saving image to database.";
+                echo "Error saving image to database." . $stmt->error;
             }
             $stmt->close();
         } else {

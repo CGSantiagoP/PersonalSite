@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Image</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+
+    <header>
+        <img src="components/WhiteCameraLogo.png" alt="Carlos Photography Logo" class="logoImage">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </nav>
+        <!-- Contact Button -->
+        <a href="contact.html">
+            <button class="contact-button" >Contact</button>
+        </a>
+    </header>
+
+
+    <h2>Upload a New Image</h2>
+    <form id="uploadForm" enctype="multipart/form-data">
+        <label for="image">Choose Image:</label>
+        <input type="file" id="image" name="image" accept="image/*" required>
+        <br><br>
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description" required>
+        <br><br>
+        <button type="submit">Upload</button>
+    </form>
+
+    <script>
+        document.getElementById("uploadForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const formData = new FormData();
+            formData.append("image", document.getElementById("image").files[0]);
+            formData.append("description", document.getElementById("description").value);
+
+            fetch("upload.php", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => alert(data))
+            .catch(error => console.error("Error:", error));
+        });
+    </script>
+
+
+     <!-- Footer Section -->
+     <footer>
+        <div class="footer-container">
+            <p>&copy; 2025 Carlos's Gallery. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

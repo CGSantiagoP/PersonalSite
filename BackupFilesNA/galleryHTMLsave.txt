@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+
+    <header>
+        <img src="components/WhiteCameraLogo.png" alt="Carlos Photography Logo" class="logoImage">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </nav>
+        <!-- Contact Button -->
+        <a href="contact.html">
+            <button class="contact-button" >Contact</button>
+        </a>
+    </header>
+
+    <main>
+        <h2>Welcome to the Gallery Page</h2>
+        <p>PICTURES!</p>
+    </main>
+
+    <div class="gallery">
+        <a target="blank" href="components/1961Ghia.jpg">
+            <img src="components/1961Ghia.jpg" alt="Car Picture" width="200px">
+        </a>
+        <div class="description">1961 Karmann Ghia</div>
+    </div>
+
+    <div class="gallery">
+        <a target="blank" href="components/CanneryRow.jpg">
+            <img src="components/CanneryRow.jpg" alt="Cannery Row" width="200px">
+        </a>
+        <div class="description">Cannery Row</div>
+    </div>
+
+    <div class="gallery">
+        <a target="blank" href="components/MigTree.jpg">
+            <img src="components/MigTree.jpg" alt="Tree Boy" width="200px">
+        </a>
+        <div class="description">Tree Boy</div>
+    </div>
+
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2025 Carlos's Gallery. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

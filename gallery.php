@@ -1,6 +1,9 @@
 <?php
 // Connect to database
-// $conn = new mysqli("localhost", "root", "fyddiv-rEvkow-bazso6", "gallery_db");
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+
 $conn = new mysqli("sql213.infinityfree.com", "if0_38389790", "6AJvtAGwU7Qn", "if0_38389790_gallery_db");
 
 // Check connection
@@ -43,10 +46,6 @@ $result = $conn->query($sql);
         <h2 class="dashText">Welcome to the Gallery Page</h2>
         <p class="dashText">Here are the uploaded pictures:</p>
 
-        <!-- Upload Button
-        <a href="upload.php">
-            <button class="owner-buttons">Upload New Image</button>
-        </a> -->
         <?php if (isset($_SESSION['owner_logged_in']) && $_SESSION['owner_logged_in'] == true):?>
             <div class="admin-panel">
                 <div class="owner-buttons">

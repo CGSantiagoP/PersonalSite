@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="styles.css">
+
+<html>
+    <head>
+        <title>Carlos's Gallery!</title>
+    </head>
+
+    <body>
+        <header>
+            <img src="components/WhiteCameraLogo.png" alt="Carlos Photography Logo" class="logoImage">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="gallery.php">Gallery</a></li>
+                    <!-- <li><a href="#">Contact</a></li> -->
+                </ul>
+            </nav>
+
+            <a href="contact.html">
+                <button class="contact-button" >Contact</button>
+            </a>
+
+        </header>
+
+        <section>
+            <div class="row">
+                <div class="column" style="background-color:rgb(208, 206, 206);">
+                    <h1 class="indexQuote">"To see a world in a grain of sand, and a heaven in a wild flower, Hold infinity in the palm of your hand, And eternity in an hour."</h1>
+                    <p class="indexQuoteAuthor"> - William Blake</p>
+                </div>
+                
+                <div class="column" style="background-color:rgb(237, 234, 234);">
+                    <img src="components/indexCat.jpeg" alt="Picture of a pensive cat" class="indexImage">
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2025 Carlos's Gallery. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="gallery.php">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+    </body>
+
+</html>

@@ -1,0 +1,55 @@
+<?php
+$uploadDir = "uploads/"; // Directory to store uploaded images
+
+// Ensure the upload directory exists
+if (!file_exists($uploadDir)) {
+    mkdir($uploadDir, 0777, true);
+}
+
+// Check if a file was uploaded
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["image"])) {
+    $fileName = basename($_FILES["image"]["name"]);
+    $targetFilePath = $uploadDir . $fileName;
+    $fileType = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));
+    $description = htmlspecialchars($_POST["description"]);
+
+    // Allowed file types
+    $allowedTypes = ["jpg", "jpeg", "png", "gif"];
+
+    if (in_array($fileType, $allowedTypes)) {
+        if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFilePath)) {
+            // Save file path and description in database
+            $conn = new mysqli("localhost", "root", "fyddiv-rEvkow-bazso6", "gallery_db"); // PASSWORD MAY BE DIFFERENT
+
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
+
+            $stmt = $conn->prepare("INSERT INTO images (file_path, description) VALUES (?, ?)");
+            $stmt->bind_param("ss", $targetFilePath, $description);
+            
+            if ($stmt->execute()) {
+                echo "Image uploaded successfully!";
+            } else {
+                echo "Error saving to database: " . $stmt->error;
+            }
+
+            $stmt->close();
+            $conn->close();
+        } else {
+            echo "Error uploading file.";
+        }
+    } else {
+        echo "Invalid file type. Allowed: JPG, JPEG, PNG, GIF.";
+    }
+} else {
+    echo "No file uploaded.";
+}
+?>
+
+
+
+
+
+upload.php as of 2/25 2:54am 
+This version was meant to connect to the InfinityFree db and a local path but that was not working due to InfinityFree permissions. 

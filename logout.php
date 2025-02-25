@@ -1,6 +1,6 @@
 <?php
 session_start();
-session_destroy(); // Destroy session
+session_destroy();
 header("Location: index.php"); // Redirect to index/home
 exit();
 ?>

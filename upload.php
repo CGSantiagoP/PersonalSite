@@ -6,13 +6,13 @@ if (!isset($_SESSION['owner_logged_in']) || $_SESSION['owner_logged_in'] !== tru
 }
 
 // Connect to database
-$conn = new mysqli("localhost", "root", "fyddiv-rEvkow-bazso6", "gallery_db");
+// $conn = new mysqli("localhost", "root", "fyddiv-rEvkow-bazso6", "gallery_db");
+$conn = new mysqli("sql213.infinityfree.com", "if0_38389790", "6AJvtAGwU7Qn", "if0_38389790_gallery_db");
 
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
 // Handle form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $upload_dir = "uploads/";  // Folder to store images
@@ -22,27 +22,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $upload_ok = 1;
     $image_file_type = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
-    // Check if the file is an actual image
     $check = getimagesize($_FILES["image"]["tmp_name"]);
     if ($check === false) {
         echo "File is not an image.";
         $upload_ok = 0;
     }
-
-    // Allow only specific image formats
     $allowed_types = ["jpg", "jpeg", "png", "gif"];
     if (!in_array($image_file_type, $allowed_types)) {
         echo "Only JPG, JPEG, PNG, and GIF files are allowed.";
         $upload_ok = 0;
     }
-
-    // Check file size (limit to 5MB)
+// Can change the size accepted here
     if ($_FILES["image"]["size"] > 5 * 1024 * 1024) {
         echo "File is too large.";
         $upload_ok = 0;
     }
 
-    // Upload file if no errors
     if ($upload_ok == 1) {
         if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
             // Insert into database

@@ -64,7 +64,7 @@ if (isset($_POST['edit'])) {
 </head>
 <body>
 
-    <header>
+    <!-- <header>
         <a href="index.php">
             <img src="components/WhiteCameraLogo.png" alt="Carlos Photography Logo" class="logoImage">
         </a>
@@ -78,7 +78,9 @@ if (isset($_POST['edit'])) {
         <a href="contact.html">
             <button class="contact-button">Contact</button>
         </a>
-    </header>
+    </header> -->
+    <?php include 'components/header.html'; ?>
+
 
     <main>
         <h2 class="dashText">Manage Images</h2>

@@ -80,7 +80,7 @@ $conn->close();
 </head>
 <body>
 
-    <header>
+    <!-- <header>
         <a href="index.php">
             <img src="components/WhiteCameraLogo.png" alt="Carlos Photography Logo" class="logoImage">
         </a>
@@ -94,7 +94,9 @@ $conn->close();
         <a href="contact.html">
             <button class="contact-button">Contact</button>
         </a>
-    </header>
+    </header> -->
+    <?php include 'components/header.html'; ?>
+
 
     <main>
         <div class="upload-container">

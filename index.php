@@ -11,22 +11,8 @@ session_start();
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <header>
-        <a href="index.php">
-            <img src="components/WhiteCameraLogo.png" alt="Carlos Photography Logo" class="logoImage">
-        </a>
-        <nav>
-            <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="gallery.php">Gallery</a></li>
-            </ul>
-        </nav>
-        <a href="contact.html">
-            <button class="contact-button">Contact</button>
-        </a>
-    </header>
+    <!-- Header here -->
+    <?php include 'components/header.html'; ?>
 
     <main>
         <h2 class="dashText">Welcome to Carlos's Photography</h2>

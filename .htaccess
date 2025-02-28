@@ -1,0 +1,13 @@
+# Set default directory index
+DirectoryIndex index.php index.html index.htm
+
+# Custom error pages
+ErrorDocument 403 /errors/403.html
+ErrorDocument 404 /errors/404.html
+ErrorDocument 500 /errors/500.html
+
+# Allow access to .js files
+AddType application/javascript .js
+
+# Disable content type sniffing (for testing)
+# Header set X-Content-Type-Options "nosniff"

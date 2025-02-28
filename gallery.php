@@ -26,7 +26,7 @@ $result = $conn->query($sql);
 </head>
 <body>
 
-    <header>
+    <!-- <header>
         <a href="index.php">
             <img src="components/WhiteCameraLogo.png" alt="Carlos Photography Logo" class="logoImage">
         </a>
@@ -40,7 +40,9 @@ $result = $conn->query($sql);
         <a href="contact.html">
             <button class="contact-button">Contact</button>
         </a>
-    </header>
+    </header> -->
+    <?php include 'components/header.html'; ?>
+
 
     <main>
         <h2 class="dashText">Welcome to the Gallery Page</h2>

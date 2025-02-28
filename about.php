@@ -63,9 +63,9 @@
 
 
 
-
-
-
+<?php
+session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -78,7 +78,7 @@
 <body>
 
     <!-- Header (Same Across Pages) -->
-    <header>
+    <!-- <header>
         <a href="index.php">
             <img src="components/WhiteCameraLogo.png" alt="Carlos Photography Logo" class="logoImage">
         </a>
@@ -88,14 +88,14 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Me</a></li>
                 <li><a href="gallery.php">Gallery</a></li>
-                <!-- <li><a href="#">Contact</a></li> -->
             </ul>
         </nav>
 
         <a href="contact.html">
             <button class="contact-button" >Contact</button>
         </a>
-    </header>
+    </header> -->
+    <?php include 'components/header.html'; ?>
 
     <!-- About Me Section -->
     <section class="about">
@@ -131,3 +131,7 @@
     </footer>
 </body>
 </html>
+
+<?php
+$conn->close();
+?>

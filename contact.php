@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,12 +12,11 @@
 </head>
 <body>
 
-    <header>
-        <!-- Get logo and add here -->
+    <!-- <header>
         <a href="index.php">
             <img src="components/WhiteCameraLogo.png" alt="Carlos Photography Logo" class="logoImage">
         </a>
-        <!-- Add nav here -->
+
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -24,7 +27,8 @@
         <a href="contact.html">
             <button class="contact-button" >Contact</button>
         </a>
-    </header>
+    </header> -->
+    <?php include 'components/header.html'; ?>
 
     <main class="contact-container">
         <h2 class="contact-heading">Contact Me</h2>
@@ -61,3 +65,8 @@
     </footer>
 </body>
 </html>
+
+
+<?php
+$conn->close();
+?>
